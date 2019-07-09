@@ -15,7 +15,16 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        // this is reqiored for building the Matomo library from source code on GitHub
+		maven { url 'https://jitpack.io' }
+	}
+}
+
 dependencies {
     implementation "com.facebook.react:react-native:+"
-    implementation 'org.matomo.sdk:tracker:4.0.1'
+    // implementation 'org.matomo.sdk:tracker:4.0.1'
+    // this is reqiored for building the Matomo library from source code on GitHub
+    implementation "com.github.krzysztofolszewski86:matomo-sdk-android:master-SNAPSHOT"
 }

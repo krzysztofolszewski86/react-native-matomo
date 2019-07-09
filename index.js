@@ -6,6 +6,9 @@ module.exports = {
       Matomo.setUserId(userId + '');
     }
   },
+  setCookie: function(cookie) {
+    Matomo.setCookie(cookie);
+  },
   setCustomDimension: function(id, value){
     Matomo.setCustomDimension(id, value ? (value + '') : null);
   },
