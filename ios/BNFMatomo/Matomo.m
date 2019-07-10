@@ -54,6 +54,16 @@ RCT_EXPORT_METHOD(setUserId:(NSString* _Nonnull)userID)
     }
 }
 
+RCT_EXPORT_METHOD(setCookie:(NSString* _Nullable)cookie)
+{
+#if DEBUG
+    RCTLogInfo(@"Setting cookie");
+#endif
+    if (tracker != nil) {
+        [tracker setCookieWithCookie:cookie];
+    }
+}
+
 RCT_EXPORT_METHOD(setCustomDimension: (NSInteger* _Nonnull)index value: (NSString* _Nullable)value)
 {
 #if DEBUG
